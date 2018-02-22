@@ -7,16 +7,16 @@ var Letter = function (letter) {
         if(this.checker) {
             this.checker = false;
             return this.letter + " ";
-            console.log(this.letter);
+            // console.log(this.letter);
         } else if (this.letter === " "){
             return "  ";
-            console.log(" ");
+            // console.log(" ");
         } else {
             return "_ ";
-            console.log("_ ");
+            // console.log("_ ");
         }
     }
-    this.charChecker = function (guessedLetter) {
+    this.compare = function (guessedLetter) {
         //if the guessed letter is guessed, then set the checker to true
         if(guessedLetter === this.letter) {
             this.checker = true;
