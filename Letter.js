@@ -20,6 +20,9 @@ var Letter = function (letter) {
         //if the guessed letter is guessed, then set the checker to true
         if(guessedLetter === this.letter) {
             this.checker = true;
+
+        } else if (guessedLetter.toUpperCase() === this.letter) {
+            this.checker = true;
         }
        
     }

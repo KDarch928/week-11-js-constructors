@@ -12,6 +12,8 @@ var Word = function () {
     //a string used to display back to the user
     this.displayStr = "";
 
+    this.userGuessRightOrWrong = ""
+
     //function to add the word and push each letter into the letterArr
     this.addWord = function (word) {
         for (var i = 0; i < word.length; i++){
@@ -36,6 +38,7 @@ var Word = function () {
             // letter in that position
             if (this.str[j] !== "_" && this.str[j] !== " "){
                 this.displayStr = this.setCharAt(this.displayStr, j, this.str[j]);
+                this.userGuessRightOrWrong = "correct";
             }
         }
     }
@@ -45,6 +48,7 @@ var Word = function () {
         //TODO
         //reset the str place holder
         this.str = "";
+        this.userGuessRightOrWrong = "incorrect";
 
         //loops through the letter array and run the underlayingChar function in Letter.js to obtain the return string
         //for that letter, then adds it to the str variable
@@ -59,7 +63,7 @@ var Word = function () {
         this.updateDisplayStr();
 
         console.log(this.displayStr);
-        return this.displayStr;
+        // return this.displayStr;
     }
 
     //function to get the strings current string, the index, and the char that will be replacing the char in the
@@ -83,23 +87,26 @@ var Word = function () {
 //exporting the Word constructor
 module.exports = Word;
 
-var newWord = new Word()
+// var newWord = new Word()
+//
+// newWord.addWord("Man of Steel");
+// newWord.returnString();
+//
+// newWord.guess("j");
+// newWord.returnString();
+//
+// newWord.guess("m");
+// newWord.returnString();
+//
+// newWord.guess("M");
+// newWord.returnString();
+//
+// newWord.guess("f");
+// newWord.returnString();
+//
+// newWord.guess("E");
+// newWord.returnString();
 
-newWord.addWord("Man of Steel");
-newWord.returnString();
-
-newWord.guess("j");
-newWord.returnString();
-
-newWord.guess("M");
-newWord.returnString();
-
-newWord.guess("f");
-newWord.returnString();
-
-newWord.guess("e");
-newWord.returnString();
-
-newWord.guess("a");
-newWord.returnString();
+// newWord.guess("a");
+// newWord.returnString();
 
